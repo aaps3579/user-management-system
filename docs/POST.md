@@ -1,6 +1,20 @@
-## Add User
+
+## Generate Json Web Token
+---
+
+Generate Admin Login Token
+
+- **URL** - http://127.0.0.1/token
+- **Method** : `POST`
+
+- **Success Response:**
+
+  - **Code:** 200 <br />
+    **Content:** `xxxxxxxx`
 
 ---
+
+## Add User
 
 Add user to the system
 
