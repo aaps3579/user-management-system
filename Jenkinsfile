@@ -7,7 +7,7 @@ pipeline {
          
     stage('Build') {
       steps {
-        sh 'npm install'
+        sh 'npm i sqlite3 -D && rm -rf node_modules && npm i && npm rebuild'
       }
     }  
     
