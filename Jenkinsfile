@@ -14,7 +14,7 @@ pipeline {
     agent {
         docker { 
             image 'node:16.13.1-alpine' 
-            args '--name docker'
+            label 'docker'
         }
     }
     stages {
