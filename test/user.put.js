@@ -21,7 +21,7 @@ describe("Users", () => {
           jsonwebtoken = res.text;
           done();
         });
-    });
+    }).catch((err) => console.log(err));
   });
   /*
    * Test the /PUT route
