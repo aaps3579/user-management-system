@@ -19,19 +19,9 @@ pipeline {
         HOME = '.'
     }
     stages {
-        stage('Install dependencies') {
-            steps {
-                sh 'npm i sqlite3 -D && rm -rf node_modules && npm i && npm rebuild'
-            }
-        }
         stage('Test') { 
             steps {
                 sh 'npm run test' 
-            }
-        }
-        stage('Build Container') { 
-            steps {
-                sh 'docker build -t ums:${BUILD_NUMBER} . ' 
             }
         }
     }
