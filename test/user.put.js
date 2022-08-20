@@ -32,6 +32,7 @@ describe("Users", () => {
         .request(app)
         .put("/api/users")
         .end((err, res) => {
+          console.log(res , err);
           res.should.have.status(403);
           done();
         });
