@@ -12,11 +12,12 @@
 // }
 pipeline {
     agent {
-        dockerfile true
+        dockerfile {
+            args '-t aman/ums:latest'
+        }
     }
     environment {
-        CI = 'true' 
-        HOME = '.'
+        DOCKERHUB_CREDENTIALS=credentials('dockerhub-creds')
     }
     stages {
         stage('Test') { 
