@@ -29,13 +29,13 @@ app.post("/token", (req, res, next) => {
  * Pre - isAuthorized Middleware checks for validity of Token
  */
 app.use("/api/users", require("./auth").isAuthorized, require("./routes"));
-
-db.sequelize.authenticate().then(async () => {
+require("./models/user");
+// db.sequelize.authenticate().then(async () => {
   // define your models after connection to db is successfull
-  require("./models/user");
+
   // sync db
-  await db.sequelize.sync({ force: true });
-});
+//   await db.sequelize.sync({ force: true });
+// });
 // Environment fallbacks
 const IP = process.env.SERVER_IP || "localhost";
 const PORT = process.env.SERVER_PORT || 8000;
